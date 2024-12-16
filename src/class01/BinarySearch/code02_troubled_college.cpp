@@ -13,18 +13,9 @@ int main(){
     sort(q,q+m);
     ll sum = 0;
     for(int i=0;i<n;i++){
-        int l=0,r=m-1;
-        int idx = -1;
-        while(l<=r){
-            int m=l+((r-l)>>1);
-            if(q[m]>=c[i]){
-                idx = m;
-                r = m - 1;
-            }else l = m + 1;
-        }
-        if(idx!=-1){
-            sum += q[idx]-c[i];
-        }
+        auto l = lower_bound(q,q+m,c[i]);
+        auto r = upper_bound(q,q+m,c[i]);
+        sum += min(abs(*l-c[i]), abs(*r-c[i]));
     }
     printf("%lld\n", sum);
     return 0;

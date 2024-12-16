@@ -1,4 +1,8 @@
 //二分答案法
+//测试链接luogu: 
+//测试用例:
+//10 30
+//15 27 9 32 29 7 7 21 8 34
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -6,14 +10,14 @@ const int N = 1e6+10;
 int q[N],n,m;
 
 void bf(int l,int r){
-    ll ans = 0x7fffffff;
+    ll ans = INT_MIN;
     for(int i=l;i<=r;++i){
         ll sum = 0;
         for(int j=0;j<n;j++){
             sum += q[j]-i>0?q[j]-i:0;
         }
         if(sum>=m){
-            ans = min(ans,sum);
+            ans = max(ans,(ll)i);
         }
     }
     printf("%lld\n",ans);
@@ -31,7 +35,7 @@ void binary_search(int l,int r){
         for(int i=0;i<n;i++){
             sum += q[i]>k?q[i]-k:0;
         }
-        if(sum>=k){
+        if(sum>=m){
             ans = k;
             l = k + 1;
         }else r = k - 1;
