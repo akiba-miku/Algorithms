@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<ctype.h>
 #include<stddef.h>
 #include<string.h>
 #define N 10010
@@ -18,7 +17,7 @@ static void get_next_arr(const char* s,int n){
         else next[i++]=0;
     }
 }
-int kmp(const char* str,const char* match){
+static int kmp(const char* str,const char* match){
     n = strlen(str), m = strlen(match);
     get_next_arr(match, m);
     int i,j;
@@ -30,10 +29,12 @@ int kmp(const char* str,const char* match){
     return j==m?i-j:-1;
 }
 
-int main(){
-    fgets(str,sizeof(str), stdin);
+int main(){ fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; // 去掉换行符
     fgets(match, sizeof(match), stdin);
+    match[strcspn(match, "\n")] = '\0'; // 去掉换行符
     int idx = kmp(str,match);
+   
     if(idx==-1){
         printf("str中不存在match子串\n");
     }else{
