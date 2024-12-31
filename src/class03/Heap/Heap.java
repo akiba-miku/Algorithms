@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 
+//link:https://www.luogu.com.cn/problem/P3378
+//提交时修改主类名为Main， 否则会编译错误。
 public class Heap{
   public static int MAXN = (int)1e6+10;
   public static int[] heap = new int[MAXN];
@@ -17,7 +19,7 @@ public class Heap{
   }
   public static void heapify(int i){
     int l=i*2+1;
-    while(i<heapSize){
+    while(l<heapSize){
       int best=l+1<heapSize&&heap[l+1]<heap[l]?l+1:l;
       best = heap[best]<heap[i]?best:i;
       if(best==i) return ;

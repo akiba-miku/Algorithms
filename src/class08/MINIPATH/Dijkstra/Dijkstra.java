@@ -5,7 +5,9 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
-public class Main {
+//测试链接:https://www.luogu.com.cn/problem/P4779
+//提交时修改主类名为Main
+public class Dijkstra {
     public static final int MAXN = (int)1e5 + 10;
     public static final int MAXM = (int)2e5 + 10;
 

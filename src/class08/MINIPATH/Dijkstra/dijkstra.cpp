@@ -9,8 +9,8 @@ static const int MAXM = 2e5+10; // 边的上限（题意中一般为2×10^5）
 int head[MAXN], nxt[MAXM], to_[MAXM], w[MAXM];
 int cnt; // 当前边下标（从 1 开始）
 
-// ========== Dijkstra 需要的数组 ==========
-int dist_[MAXN];   // dist_[u] 表示从起点 s 到 u 的最短距离
+// ========== Dijkstra 需要的数组 ==========`
+int dist_[MAXN];   // dist_[u] 表示从起点 s 到 u 的最短距离++
 bool visited[MAXN]; // visited[u] 表示节点 u 是否已经确定最短距离
 
 // ========== 输入数据 ==========
