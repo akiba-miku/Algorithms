@@ -1,23 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
+//测试链接:https://www.luogu.com.cn/problem/P1177
 const int N = 1e6+10;
 int q[N],n;
 
 void heapify(int *q,int size,int i){
-    int l=(i>>1)+1;
-    while(i<size){
-        int best = l+1<n&&q[l+1]>q[l]?l+1:l;
+    int l=i*2+1;
+    while(l<size){
+        int best = l+1<size&&q[l+1]>q[l]?l+1:l;
         best = q[best]>q[i]?best:i;
         if(best==i) return ;
-        swap(q[0],q[best]);
+        std::swap(q[i],q[best]);
         i = best;
-        l = (i>>1)+1;
+        l = i*2+1;
     }
 }
 int main(){
     scanf("%d", &n);
     for(int i=0;i<n;i++){
-        scanf("%d", q+i);
+        scanf("%d", &q[i]);
     }
     for(int i=(n-1)>>1;i>=0;i--){
         heapify(q,n,i);
@@ -27,6 +28,10 @@ int main(){
         swap(q[0],q[--size]);
         heapify(q,size,0);
     }
+    for(int i=0;i<n-1;i++){
+        printf("%d ",q[i]);
+    }
+    printf("%d\n",q[n-1]);
     return 0;
 }
 // int main(){
