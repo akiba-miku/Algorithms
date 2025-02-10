@@ -6,7 +6,8 @@
 // 要求每个城市都有n人抵达
 // 测试链接 : https://leetcode.cn/problems/two-city-scheduling/、
 
-
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int twoCitySchedCost(vector<vector<int>>& costs) {

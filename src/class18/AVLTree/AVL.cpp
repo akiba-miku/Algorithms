@@ -50,25 +50,27 @@ int post(int i);
 //post的辅助函数
 int post(int i,int num);
 
+//添加元素， 若有多个则增加词频。
 void add(int val);
 int add(int i,int val);
 
+//删除元素， 若有多个则减少一个词频即可
 void remove(int val);
 int remove(int i,int val);
 
 
 //----------------
 //字段
-const static int N = 1e6+10;
+const static int N = 1e6+10;//数据范围
 
-int head = 0;//AVL树的根节点
-int cnt = 0;//当前最后使用过节点的编号
-int key[N];
-int height[N];
-int leftChild[N];
-int rightChild[N];
-int key_count[N];
-int size[N];
+int head = 0; // AVL树的根节点
+int cnt; // 当前最后使用过节点的编号
+int key[N]; // 节点的值
+int height[N]; // 节点的高度
+int leftChild[N]; // 节点的左子节点
+int rightChild[N]; // 节点的右子节点
+int key_count[N]; // 节点值的重复次数
+int size[N]; // 子树大小
 
 //更新size,height信息。 根据孩子更新信息
 void up(int i){
@@ -124,6 +126,7 @@ int maintain(int i){
   return i;
 }
 
+//add函数
 int add(int i,int val){
   if(i==0){
     key[++cnt] = val;

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include<cstdio>
+#include<climits>
 using namespace std;
 
 // ========== 常量定义 ==========
@@ -141,7 +142,7 @@ int main(){
     dijkstra();
 
     // 输出 dist_[1]..dist_[n]
-    // 注：题目若节点从1..n，这里一定要打印 dist_[1]
+    // 注：题目节点从1..n，这里一定要打印 dist_[1]
     printf("%d", dist_[1]);
     for(int i=2; i <= n; i++){
         printf(" %d", dist_[i]);

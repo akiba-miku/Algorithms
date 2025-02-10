@@ -99,7 +99,7 @@ public class Dijkstra {
             // 移除堆顶 => 将堆尾移到顶，再“下沉”
             swap(0, --heapSize);
             if(heapSize > 0) {
-                push_down(0);
+                push_down();
             }
 
             // 如果已访问过，跳过

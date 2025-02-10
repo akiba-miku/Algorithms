@@ -1,3 +1,7 @@
+//a[i][j]是二维数组
+//b[i][h]是二维差分数字
+//b[i][j]=a[i][j]-a[i][j-1]-a[i-1][j]+a[i-1][j-1];
+//=>a[i][j]=b[i][j]+a[i][j-1]+a[i-1][j]-a[i-1][j-1];
 #include<cstdio>
 
 const int N = 1e3+10;
